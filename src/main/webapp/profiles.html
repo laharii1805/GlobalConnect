@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Profile - Lahari Naingari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .profile-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 20px;
+        }
+        .header {
+            background-color: #6c63ff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .section-container {
+            flex: 1 1 calc(50% - 20px);
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #6c63ff;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .social-icons img {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+        .progress-bar {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            height: 10px;
+            margin-top: 5px;
+        }
+        .progress-bar div {
+            background-color: #6c63ff;
+            height: 100%;
+        }
+        .subscribe-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .subscribe-button button {
+            background-color: #6c63ff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .subscribe-button button:hover {
+            background-color: #564fdb;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <header class="header">
+            <h1>Welcome, Lahari Naingari!</h1>
+        </header>
+        <main class="content">
+            <div class="section-container">
+                <h2>Personal Information</h2>
+                <p><strong>Name:</strong> Lahari Naingari</p>
+                <p><strong>Registration Date:</strong> November 24, 2024</p>
+                <p><strong>Country, City:</strong> India, Hyderabad</p>
+                <p><strong>Date of Birth:</strong> 18.05.2004</p>
+                <p><strong>Email:</strong> laharinaingari@gmail.com</p>
+                <p><strong>Phone:</strong> (+91) 8639206475</p>
+                <div class="social-icons">
+                    <img src="facebook-icon.png" alt="Facebook">
+                    <img src="twitter-icon.png" alt="Twitter">
+                    <img src="linkedin-icon.png" alt="LinkedIn">
+                    <img src="instagram-icon.png" alt="Instagram">
+                </div>
+            </div>
+            <div class="section-container">
+                <h2>Payment Details</h2>
+                <p><strong>Card Number:</strong> **** **** **** 2365</p>
+                <p><strong>Payment Methods:</strong> GPay, VISA</p>
+            </div>
+            <div class="section-container" style="width: 100%">
+                <h2>My Courses</h2>
+                <ul>
+                    <li>
+                        <strong>Course:</strong> UX/UI Design - Websites<br>
+                        <small>Description: Composition, typography, color theory...</small>
+                        <div class="progress-bar">
+                            <div style="width: 100%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Course:</strong> UX/UI Design - Applications<br>
+                        <small>Description: Interface design for mobile apps...</small>
+                        <div class="progress-bar">
+                            <div style="width: 100%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <strong>Course:</strong> UX/UI Design - Animation<br>
+                        <small>Description: Animation of interface elements...</small>
+                        <div class="progress-bar">
+                            <div style="width: 50%;"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <div class="subscribe-button">
+            <button>Subscribe</button>
+        </div>
+    </div>
+</body>
+</html>

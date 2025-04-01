@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Connect</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0 5%;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            width: 100%;
+            gap: 50px;
+        }
+        .image-container {
+            position: relative;
+            width: 45%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .icon-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: black;
+            padding: 10px;
+            border-radius: 50%;
+            border: 2px solid #a51c30;
+        }
+        .book-icon {
+            width: 40px;
+            height: 40px;
+            color: #a51c30;
+        }
+        .content {
+            width: 50%;
+            max-width: 600px;
+        }
+        .subtitle {
+            color: #a51c30;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .description {
+            color: #ccc;
+            margin-top: 10px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .read-more {
+            margin-top: 20px;
+            background: #a51c30;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .read-more:hover {
+            background: #8c1628;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .image-container, .content {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="homepic.png" alt="Abstract" class="background-image">
+            <div class="icon-container">
+                <svg class="book-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                    <path d="M6.5 2A2.5 2.5 0 0 0 4 4.5V19.5"/>
+                    <path d="M20 19.5V4.5A2.5 2.5 0 0 0 17.5 2H6.5"/>
+                    <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H17.5A2.5 2.5 0 0 1 20 4.5"/>
+                </svg>
+            </div>
+        </div>
+        <div class="content">
+            <p class="subtitle">About</p>
+            <h2 class="title">Our Global Connect Platform</h2>
+            <p class="description">Global Connect fosters collaboration among students from diverse universities, providing opportunities for internships, projects, and knowledge exchange, creating a vibrant online community.</p>
+            <button class="read-more">Read More</button>
+        </div>
+    </div>
+</body>
+</html>

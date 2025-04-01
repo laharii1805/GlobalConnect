@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat</title>
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lavender;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            color: black;
+        }
+
+        .btn-container {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .chat-container {
+            width: 60%;
+            height: 500px;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            display: none;
+            flex-direction: column;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #chat-box {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            max-width: 60%;
+            word-wrap: break-word;
+            font-size: 14px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+        .my-message {
+            align-self: flex-end;
+            background: #add8e6;
+            color: black;
+        }
+
+        .other-message {
+            align-self: flex-start;
+            background: #90ee90;
+            color: black;
+        }
+
+        .input-area {
+            display: flex;
+            padding: 10px;
+            background: #f1f1f1;
+            border-top: 1px solid #ccc;
+        }
+
+        #message-input {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-left: 5px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Video Call Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close-btn {
+            background: red;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to GlobalConnect Chat Bot!</h1>
+    <h3>How may I assist you?</h3>
+    
+    <div class="btn-container">
+        <button class="btn" onclick="startChat()">Start Chat</button>
+        <button class="btn" onclick="startVideoCall()">Start Video Call</button>
+    </div>
+    
+    <div class="chat-container" id="chatScreen">
+        <div id="chat-box"></div>
+        <div class="input-area">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="modal" id="videoCallModal">
+        <div class="modal-content">
+            <h2>Video Call in Progress...</h2>
+            <button class="close-btn" onclick="endVideoCall()">End Call</button>
+        </div>
+    </div>
+
+    <script>
+        function startChat() {
+            document.getElementById("chatScreen").style.display = "flex";
+        }
+
+        function startVideoCall() {
+            document.getElementById("videoCallModal").style.display = "flex";
+        }
+
+        function endVideoCall() {
+            document.getElementById("videoCallModal").style.display = "none";
+        }
+
+        function sendMessage() {
+            const input = document.getElementById("message-input");
+            const message = input.value.trim();
+            if (message !== "") {
+                displayMessage(`👩 ${message}`, true);
+                input.value = "";
+                setTimeout(() => {
+                    const botReplies = ["That's interesting!", "Tell me more!", "I totally agree!", "That sounds amazing!", "Wow, really?", "Can you explain further?", "Haha, that's funny!", "I'm here to chat!", "How's your day going?", "Nice to hear from you!"];
+                    const randomReply = botReplies[Math.floor(Math.random() * botReplies.length)];
+                    displayMessage(`🤖 ${randomReply}`, false);
+                }, 1500);
+            }
+        }
+
+        function displayMessage(message, isMine) {
+            const chatBox = document.getElementById("chat-box");
+            const msgDiv = document.createElement("div");
+            msgDiv.className = "message " + (isMine ? "my-message" : "other-message");
+            msgDiv.innerHTML = `<span>${message}</span>`;
+            chatBox.appendChild(msgDiv);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>

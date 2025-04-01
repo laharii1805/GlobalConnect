@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Connect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+        }
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .request-btn {
+            background-color: #4f46e5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            padding: 50px;
+        }
+
+        .text-section {
+            flex: 1;
+        }
+
+        .text-section h1 {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .text-section p {
+            font-size: 16px;
+            max-width: 400px;
+        }
+
+        .image-section {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-section img {
+            width: 90%;
+            border-radius: 10px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 50px;
+            background-color: #10151e;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background-color: #1c2331;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #e47acc;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo" onclick="redirectTo('home.html')">GLOBAL CONNECT</div>
+        <div class="nav-links">
+            <a onclick="redirectTo('home.html')">Home</a>
+            <a href="#features">Features</a>
+            <a onclick="redirectTo('testimonials.html')">Testimonial</a>
+        </div>
+        <a href="signup.html" class="request-btn">Join Now</a>
+    </nav>
+
+    <div class="container">
+        <div class="text-section">
+            <h1>Empower Your Future</h1>
+            <p>Join Global Connect to network with students worldwide, explore internships, and enhance your career opportunities.</p>
+        </div>
+        <div class="image-section">
+            <img src="Globalconnect.png" alt="Video Conference">
+        </div>
+    </div>
+
+    <section class="features" id="features">
+
+        <h2>Our Features</h2>
+        <div class="features-container">
+            <div class="feature-card" onclick="redirectTo('profiles.html')">
+                <img src="bell.png" alt="User Profiles">
+                <div>
+                    <h3>User Profiles</h3>
+                    <p>Create a personalized profile to showcase skills and connect with students globally for opportunities.</p>
+                </div>
+            </div>
+            <div class="feature-card" onclick="redirectTo('jobs.html')">
+                <img src="eye.png" alt="Job Listings">
+                <div>
+                    <h3>Job Listings</h3>
+                    <p>Explore job and internship listings tailored to your career goals and interests.</p>
+                </div>
+            </div>
+            <div class="feature-card" onclick="redirectTo('messaging.html')">
+                <img src="pen.png" alt="Messaging Tools">
+                <div>
+                    <h3>Messaging Tools</h3>
+                    <p>Utilize messaging and video calls for seamless communication with peers and professionals worldwide.</p>
+                </div>
+            </div>
+            <div class="feature-card" onclick="redirectTo('forums.html')">
+                <img src="cameraa.png" alt="Community Forums">
+                <div>
+                    <h3>Community Forums</h3>
+                    <p>Engage in community forums and events to expand your network and gain valuable insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
